@@ -1,0 +1,17 @@
+bzip2
+dbus-x11
+emacs-nox
+epel-release
+firefox
+git
+gtk3
+js
+lsof
+mesa-dri-drivers
+net-tools
+psmisc
+python-pip
+unzip
+wget
+xorg-x11-server-Xvfb
+xorg-x11-xinit

@@ -1,0 +1,23 @@
+server:
+  extends:
+    file: common.yml
+    service: server
+  build: server
+  # cap_add and privileged are not recommended for production,
+  # but in development, running things like `lsof` are useful
+  cap_add:
+    - ALL
+  privileged: true
+
+agent:
+  extends:
+    file: common.yml
+    service: agent
+  build: agent/centos
+  links: 
+    - server
+  # cap_add and privileged are not recommended for production,
+  # but in development, running things like `lsof` are useful
+  cap_add:
+    - ALL
+  privileged: true

@@ -1,0 +1,13 @@
+bzip2
+epel-release
+emacs-nox
+firefox
+git
+js
+lsof
+net-tools
+psmisc
+unzip
+wget
+xorg-x11-server-Xvfb
+xorg-x11-xinit

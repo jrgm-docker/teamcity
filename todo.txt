@@ -1,0 +1,5 @@
+- cd .BuildServer/plugins/; wget vf.io/url-build-trigger.zip      
+- (tight)vncserver
+- ubuntu agent
+- chromium
+- import configuration

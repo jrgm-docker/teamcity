@@ -1,0 +1,9 @@
+server:
+  ports:
+    - "8111:8111"
+  volumes:
+    - /var/data/teamcity:/data/teamcity
+
+agent:
+  environment:
+    - TEAMCITY_AGENT_OWNPORT=9192
