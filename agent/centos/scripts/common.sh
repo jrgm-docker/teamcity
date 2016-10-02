@@ -13,7 +13,7 @@ cd /var/tmp
 git clone git://github.com/isaacs/nave.git
 cd nave
 git checkout -b v1.0.1-branch v1.0.1
-./nave.sh usemain 4
+./nave.sh usemain 4 2>nave-install.log
 ln -s /usr/local/bin/node /usr/bin/node
 ln -s /usr/local/bin/npm /usr/bin/npm
 /usr/local/bin/npm install -g bower
