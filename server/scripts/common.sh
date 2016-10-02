@@ -8,15 +8,14 @@ yum --quiet -y install epel-release
 yum --quiet repolist
 yum --quiet -y install $(cat /scripts/yum-requirements.txt)
 
-# nodejs@0.10 and modern npm@2
+# install node 4.x
 cd /var/tmp
 git clone git://github.com/isaacs/nave.git
 cd nave
-git checkout -b v0.5.1 178a055c4fe90ce64ecadbb059f595e2230b575e
-./nave.sh usemain 0.10 2>/dev/null
+git checkout -b v1.0.1-branch v1.0.1
+./nave.sh usemain 4
 ln -s /usr/local/bin/node /usr/bin/node
 ln -s /usr/local/bin/npm /usr/bin/npm
-/usr/local/bin/npm install -g npm@2
 /usr/local/bin/npm install -g bower
 
 # this depends on `js` that was previously installed by yum above
