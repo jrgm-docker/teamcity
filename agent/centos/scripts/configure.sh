@@ -7,7 +7,7 @@ dbus-uuidgen --ensure
 pip install supervisor
 
 wget --no-verbose \
-  http://selenium-release.storage.googleapis.com/2.47/selenium-server-standalone-2.53.1.jar
+  https://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.1.jar
 echo "63a0b96eab18f8420b9bba2f0f5d380c  selenium-server-standalone-2.53.1.jar" >> MD5SUM
 md5sum -c MD5SUM
 
