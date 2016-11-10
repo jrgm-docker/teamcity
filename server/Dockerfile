@@ -6,7 +6,7 @@ MAINTAINER John Morrison <jrgm@mozilla.com>
 # TeamCity data is stored in a volume to facilitate container upgrade
 VOLUME  ["/data/teamcity"]
 ENV TEAMCITY_DATA_PATH /data/teamcity
-ENV TEAMCITY_PACKAGE TeamCity-10.0.2.tar
+ENV TEAMCITY_PACKAGE TeamCity-10.0.2.tar.gz
 ENV TEAMCITY_DOWNLOAD https://download.jetbrains.com/teamcity
 
 COPY scripts /scripts
