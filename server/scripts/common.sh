@@ -24,9 +24,9 @@ chmod 755 /usr/local/bin/jsawk
 
 # install java jdk
 wget --no-verbose --no-cookies \
-      --header "Cookie: oraclelicense=accept-securebackup-cookie" \
-      http://download.oracle.com/otn-pub/java/jdk/7u76-b13/jdk-7u76-linux-x64.rpm
-echo "993d0d6425951d2a3fe39d8ad2e550fc  jdk-7u76-linux-x64.rpm" >> MD5SUM
+  --header "Cookie: oraclelicense=accept-securebackup-cookie" \
+  http://download.oracle.com/otn-pub/java/jdk/8u112-b15/jdk-8u112-linux-x64.rpm
+echo "25b37dc93828cc24e2c246cf6f4a5aac  jdk-7u76-linux-x64.rpm" >> MD5SUM
 md5sum -c MD5SUM
 rpm -Uvh jdk-7u76-linux-x64.rpm
 rm -f jdk-7u76-linux-x64.rpm MD5SUM
