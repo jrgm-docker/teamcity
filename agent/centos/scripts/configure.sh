@@ -9,15 +9,24 @@ pip install supervisor
 useradd xvfb
 useradd teamcity
 
-# legacy Fx18 build for our testing
-if [ ! -f home/teamcity/firefox-channels/fx18/en-US/firefox/firefox-bin ]; then
-    wget --no-verbose \
-      https://ftp.mozilla.org/pub/mozilla.org/firefox/releases/18.0.2/linux-x86_64/en-US/firefox-18.0.2.tar.bz2
-    echo "29903172f6fd788f04dbeb27b9193fe6  firefox-18.0.2.tar.bz2" > MD5SUM
-    md5sum -c MD5SUM
-    su - teamcity -c "mkdir -p /home/teamcity/firefox-channels/fx18/en-US"
-    su - teamcity -c "tar xjf /firefox-18.0.2.tar.bz2 -C /home/teamcity/firefox-channels/fx18/en-US"
-    mkdir -p /home/ubuntu/ff18/firefox
-    ln -s /home/teamcity/firefox-channels/fx18/en-US/firefox/firefox-bin /home/ubuntu/ff18/firefox/firefox-bin
-fi
+set -o errexit # exit on first command with non-zero status
 
+function install_firefox {
+  local FX_VERSION=$1
+  local SUBDIR=$2
+  local MD5SUM=$3
+
+  local FX_SITE=https://download-installer.cdn.mozilla.net/pub/firefox/releases
+  local FX_IMAGE=${FX_SITE}/${FX_VERSION}/linux-x86_64/en-US/firefox-${FX_VERSION}.tar.bz2
+    
+  wget --no-verbose -O /tmp/firefox-${FX_VERSION}.tar.bz2 "${FX_IMAGE}"
+  echo "${MD5SUM}  firefox-${FX_VERSION}.tar.bz2" > MD5SUM
+  md5sum -c MD5SUM
+
+  su - teamcity -c "mkdir -p /home/teamcity/firefox-channels/${SUBDIR}/en-US"
+  su - teamcity -c "tar xjf /tmp/firefox-${FX_VERSION}.tar.bz2 -C /home/teamcity/firefox-channels/${SUBDIR}/en-US"
+  /home/teamcity/firefox-channels/${SUBDIR}/en-US/firefox/firefox-bin --version
+}
+
+install_firefox 50.1.0 latest 335635575a221d4eeeb83865be405b51
+install_firefox 18.0.2 fx18   29903172f6fd788f04dbeb27b9193fe6
