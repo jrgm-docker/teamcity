@@ -20,7 +20,7 @@ function install_firefox {
   local FX_IMAGE=${FX_SITE}/${FX_VERSION}/linux-x86_64/en-US/firefox-${FX_VERSION}.tar.bz2
     
   wget --no-verbose -O /tmp/firefox-${FX_VERSION}.tar.bz2 "${FX_IMAGE}"
-  echo "${MD5SUM}  firefox-${FX_VERSION}.tar.bz2" > MD5SUM
+  echo "${MD5SUM}  /tmp/firefox-${FX_VERSION}.tar.bz2" > MD5SUM
   md5sum -c MD5SUM
 
   su - teamcity -c "mkdir -p /home/teamcity/firefox-channels/${SUBDIR}/en-US"
