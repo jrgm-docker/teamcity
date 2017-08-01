@@ -9,6 +9,7 @@ js
 lsof
 mesa-dri-drivers
 net-tools
+openssl
 psmisc
 python-pip
 unzip

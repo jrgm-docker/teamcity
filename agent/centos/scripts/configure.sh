@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 
 set -e 
+set -x
 
 dbus-uuidgen --ensure
 
@@ -28,5 +29,5 @@ function install_firefox {
   /home/teamcity/firefox-channels/${SUBDIR}/en-US/firefox/firefox-bin --version
 }
 
-install_firefox 50.1.0 latest 335635575a221d4eeeb83865be405b51
+install_firefox 53.0.2 latest e5c86d6ce90356848244c839722d4892
 install_firefox 18.0.2 fx18   29903172f6fd788f04dbeb27b9193fe6
