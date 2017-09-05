@@ -6,6 +6,7 @@ git
 js
 lsof
 net-tools
+openssl
 psmisc
 unzip
 wget
