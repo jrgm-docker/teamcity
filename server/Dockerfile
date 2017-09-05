@@ -9,6 +9,10 @@ ENV TEAMCITY_DATA_PATH /data/teamcity
 ENV TEAMCITY_PACKAGE TeamCity-10.0.2.tar.gz
 ENV TEAMCITY_DOWNLOAD https://download.jetbrains.com/teamcity
 
+# `nave` requires me to fake this command now
+COPY scripts/shasum /usr/bin/shasum
+RUN chmod ugo+x /usr/bin/shasum
+
 COPY scripts /scripts
 RUN /scripts/common.sh
 
