@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+# Fake out `shasum -a 256 myfile`
+sha=$(openssl sha1 -sha256 $3 | awk '{ print $NF }')
+echo $sha $3
+
