@@ -14,10 +14,10 @@ cd /var/tmp
 git clone git://github.com/isaacs/nave.git
 cd nave
 git checkout -b v2.2.3-branch v2.2.3
-./nave.sh install 6.11.2 2>nave-install.log
-ln -s /root/.nave/installed/6.11.2/bin/node /usr/bin/node
-ln -s /root/.nave/installed/6.11.2/bin/npm /usr/bin/npm
-/usr/bin/npm install -g bower
+./nave.sh usemain 6 2>nave-install.log
+ln -s /usr/local/bin/node /usr/bin/node
+ln -s /usr/local/bin/npm /usr/bin/npm
+/usr/local/bin/npm install -g bower
 
 # this depends on `js` that was previously installed by yum above
 curl --silent -L http://github.com/micha/jsawk/raw/master/jsawk > /usr/local/bin/jsawk
