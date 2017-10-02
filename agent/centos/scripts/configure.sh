@@ -29,5 +29,7 @@ function install_firefox {
   /home/teamcity/firefox-channels/${SUBDIR}/en-US/firefox/firefox-bin --version
 }
 
-install_firefox 53.0.2 latest e5c86d6ce90356848244c839722d4892
-install_firefox 18.0.2 fx18   29903172f6fd788f04dbeb27b9193fe6
+install_firefox 18.0.2    fx18        29903172f6fd788f04dbeb27b9193fe6
+install_firefox 52.4.0esr latest-esr  815dd7a014aa8587f8cf1b084dc3d448
+install_firefox 53.0.2    latest      e5c86d6ce90356848244c839722d4892
+install_firefox 57.0b4    latest-beta dd739d95e4128ff747d70c3372b0a02a
