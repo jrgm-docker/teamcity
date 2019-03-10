@@ -2,14 +2,14 @@ server:
   extends:
     file: common.yml
     service: server
-  image: quay.io/jrgm_docker/teamcity-server
+  image: quay.io/jrgm_docker/teamcity-server:updates-03-2019
   restart: always
 
 agent:
   extends:
     file: common.yml
     service: agent
-  image: quay.io/jrgm_docker/teamcity-agent-centos
+  image: quay.io/jrgm_docker/teamcity-agent-centos:updates-03-2019
   links:
     - server
   restart: always
