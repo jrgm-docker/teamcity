@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+# The files server/scripts/common.sh and agent/centos/scripts/common.sh must be identical.
+
 set -e
 set -x
 
@@ -9,12 +11,12 @@ yum --quiet -y install epel-release
 yum --quiet repolist
 yum --quiet -y install $(cat /scripts/yum-requirements.txt)
 
-# install node 6.x
+# install node 8.x
 cd /var/tmp
 git clone git://github.com/isaacs/nave.git
 cd nave
 git checkout -b v2.2.3-branch v2.2.3
-./nave.sh usemain 6 2>nave-install.log
+./nave.sh usemain 8 2>nave-install.log
 ln -s /usr/local/bin/node /usr/bin/node
 ln -s /usr/local/bin/npm /usr/bin/npm
 /usr/local/bin/npm install -g bower
