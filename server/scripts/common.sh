@@ -26,9 +26,10 @@ chmod 755 /usr/local/bin/jsawk
 # install java jdk
 JDKRPM=jdk-8u201-linux-x64.rpm
 KEYVALUE=42970487e3af4f5aa5bca3f542482c60
+BUILDNUM=8u201-b09
 wget --no-verbose --no-cookies \
   --header "Cookie: oraclelicense=accept-securebackup-cookie" \
-  http://download.oracle.com/otn-pub/java/jdk/8u144-b01/$KEYVALUE/$JDKRPM
+  https://download.oracle.com/otn-pub/java/jdk/$BUILDNUM/$KEYVALUE/$JDKRPM
 echo "c4ecb536002798fa12b644ae9bc70b43  $JDKRPM" >> MD5SUM
 md5sum -c MD5SUM
 rpm -Uvh $JDKRPM
