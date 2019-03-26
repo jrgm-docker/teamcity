@@ -11,12 +11,12 @@ yum --quiet -y install epel-release
 yum --quiet repolist
 yum --quiet -y install $(cat /scripts/yum-requirements.txt)
 
-# install node 8.x
+# install node 10.x
 cd /var/tmp
 git clone git://github.com/isaacs/nave.git
 cd nave
 git checkout -b v2.2.3-branch v2.2.3
-./nave.sh usemain 8 2>nave-install.log
+./nave.sh usemain 10 2>nave-install.log
 ln -s /usr/local/bin/node /usr/bin/node
 ln -s /usr/local/bin/npm /usr/bin/npm
 /usr/local/bin/npm install -g bower
